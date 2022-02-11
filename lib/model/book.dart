@@ -1,10 +1,10 @@
 class Book {
-  final int id;
-  final String title;
-  final String releaseDate;
-  final String author;
-  final String image;
-  final String type;
+  int? id;
+  String title;
+  String releaseDate;
+  String author;
+  String image;
+  String type;
 
   Book(
     this.id,
@@ -14,4 +14,26 @@ class Book {
     this.image,
     this.type,
   );
+
+  static Book bookDefault() {
+    return Book(null, '', '', '', '', '');
+  }
+
+  Book copyWith({
+    int? id,
+    String? title,
+    String? releaseDate,
+    String? author,
+    String? image,
+    String? type,
+  }) {
+    return Book(
+      id ?? this.id,
+      title ?? this.title,
+      releaseDate ?? this.releaseDate,
+      author ?? this.author,
+      image ?? this.image,
+      type ?? this.type,
+    );
+  }
 }

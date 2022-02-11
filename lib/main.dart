@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(title: 'Book Management'),
+      home: HomePage(title: 'Book Management'),
     );
   }
 }

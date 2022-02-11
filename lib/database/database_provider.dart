@@ -20,7 +20,7 @@ class DatabaseProvider {
     String path = join(documentDirectory.path, 'book_management.db');
     final database = await openDatabase(
       path,
-      version: 1,
+      version: 4,
       onCreate: (database, version) async {
         await database.execute("CREATE TABLE books ("
             "id INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -28,7 +28,7 @@ class DatabaseProvider {
             "releaseDate TEXT NOT NULL,"
             "author TEXT NOT NULL,"
             "image TEXT NOT NULL,"
-            "type TEXT NOT NULL,"
+            "type TEXT NOT NULL"
             ");");
       },
       onUpgrade: (database, olderVersion, newVersion) async {
@@ -40,7 +40,7 @@ class DatabaseProvider {
             "releaseDate TEXT NOT NULL,"
             "author TEXT NOT NULL,"
             "image TEXT NOT NULL,"
-            "type TEXT NOT NULL,"
+            "type TEXT NOT NULL"
             ");");
       },
     );

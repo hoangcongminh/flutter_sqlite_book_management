@@ -1,7 +1,7 @@
-import 'package:book_management/model/book.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../database/database_provider.dart';
+import '../model/book.dart';
 
 class BookDAO {
   final databaseProvider = DatabaseProvider.provider;
