@@ -21,6 +21,7 @@ class SingleTextFormField extends StatelessWidget {
     return ListTile(
       leading: icon,
       title: TextFormField(
+        textCapitalization: TextCapitalization.sentences,
         validator: (value) {
           if (value!.isEmpty) {
             return "$title field can't be empty";
@@ -30,7 +31,10 @@ class SingleTextFormField extends StatelessWidget {
         initialValue: initialValue,
         onChanged: (text) => onChanged(text),
         decoration: InputDecoration(
+          border: const OutlineInputBorder(),
+          label: Text(title),
           hintText: hintText,
+          floatingLabelBehavior: FloatingLabelBehavior.always,
         ),
       ),
     );

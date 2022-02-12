@@ -52,6 +52,7 @@ class _EditPageState extends State<EditPage> {
                   });
                 },
               ),
+              const SizedBox(height: 10),
               SingleTextFormField(
                 icon: const Icon(Icons.book),
                 title: 'Title',
@@ -59,6 +60,7 @@ class _EditPageState extends State<EditPage> {
                 hintText: 'title',
                 onChanged: (text) => widget.book.title = text,
               ),
+              const SizedBox(height: 10),
               SingleTextFormField(
                 icon: const Icon(Icons.person),
                 title: 'Author',
@@ -66,6 +68,7 @@ class _EditPageState extends State<EditPage> {
                 hintText: 'author',
                 onChanged: (text) => widget.book.author = text,
               ),
+              const SizedBox(height: 10),
               SingleTextFormField(
                 icon: const Icon(Icons.filter),
                 title: 'Type',

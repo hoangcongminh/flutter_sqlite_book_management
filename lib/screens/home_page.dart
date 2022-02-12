@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
         stream: bloc.books,
         builder: (context, AsyncSnapshot<List<Book>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const CircularProgressIndicator();
+            return const Center(child: CircularProgressIndicator());
           }
 
           final books = snapshot.data;
@@ -43,7 +43,9 @@ class HomePage extends StatelessWidget {
                             EditPage(title: 'Edit Book', book: book),
                       ),
                     );
-                    bloc.updateBooks(editedBook);
+                    if (editedBook != null) {
+                      bloc.updateBooks(editedBook);
+                    }
                   },
                   child: ListTile(
                     leading: Container(
