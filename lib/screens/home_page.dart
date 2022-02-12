@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../bloc/book_bloc.dart';
@@ -44,13 +46,24 @@ class HomePage extends StatelessWidget {
                     bloc.updateBooks(editedBook);
                   },
                   child: ListTile(
-                    // leading: Container(
-                    //         alignment: Alignment.bottomRight,
-                    //         width: 70,
-                    //         height: 70,
-                    // ),
-                    title: Text(book.title),
-                    subtitle: Text(book.author),
+                    leading: Container(
+                      alignment: Alignment.bottomRight,
+                      width: 70,
+                      height: 70,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        image: DecorationImage(
+                          image: book.image.isNotEmpty
+                              ? FileImage(File(book.image)) as ImageProvider
+                              : const AssetImage(
+                                  'assets/images/book_cover.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    title: Text('Title: ${book.title}'),
+                    subtitle: Text('Type: ${book.type}'),
+                    trailing: Text('Author: ${book.author}'),
                   ),
                 ),
               );

@@ -16,7 +16,7 @@ class Book {
   );
 
   static Book bookDefault() {
-    return Book(null, '', '', '', '', '');
+    return Book(null, '', '1900-01-01', '', '', '');
   }
 
   Book copyWith({
